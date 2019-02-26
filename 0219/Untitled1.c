@@ -4,12 +4,18 @@
 int main(void)
 {
     int x;
-    int y;
-    x = 5;
-    y = 10;
-    y = (double)y/x + 0.5;//注意y 是int，如果小數就GG
-    //左邊的y還是int，右邊的y改設成double就可以只加0.5就四捨五入囉
-    printf("%10d", y);
+    double z = 3.14;
+
+    printf("0: Z*2, 1: z/2\n");
+
+    scanf("%d", &x);
+//    scanf("%lf", &z);
+
+    z = (1-x)*(z*2) + x*(z/2);//不用if-elseㄉ二元選擇運算MAGIC!!!!(欸
+
+    printf("%f", z);
+//    printf("%d\n", x*2);
+//    printf("%f\n", z/3);
 
     return 0;
 }
