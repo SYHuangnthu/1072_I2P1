@@ -1,59 +1,101 @@
-#include<stdio.h>
+#include <stdio.h>
+/*
+int main(void)
+{
+    int width, precision;
+    double rate = 123.45;
+    printf("Enter a width and a precision: ");
+    scanf("%d%d", &width, &precision);
+    printf("rate: '%*.*f'\n", width, precision, rate);
+    // *殼以動態控制格式欸豪狂喔
+    return 0 ;
+}
+*/
+/*
+Using the %*.s format in printf()
+#include <string.h>
+#define BORDER "############################################"
+int main(void)
+{
+    char word[26];
+    scanf("%25s", word);
+    printf("%.*s\n", strlen(word)+2, BORDER);
+    printf("#%s#\n", word);
+    printf("%.*s\n", strlen(word)+2, BORDER);
+
+    return 0 ;
+}
+
+
+*/
+/*
+int main(void)
+{
+    printf("%s\n", __FILE__);
+    printf("%s\n", __LINE__);
+    printf("%s\n", __func__);
+    printf("%s\n", __DATE__);
+    printf("%s\n", __TIME__);
+    return 0;
+}
+*/
+/*
+int main(void)
+{
+    int x, n;
+    int i, sum;
+    int a[50];
+
+    printf("How many numbers? (n<50) ");
+
+    scanf("%d", &n);
+    i = 0;
+    while (i<n) {
+
+        printf("Input a[%d]: ", i);
+        scanf("%d", &x);
+
+        printf("The number is %d\n", x);
+
+        a[i] = x;
+
+        i = i + 1;
+    }
+    i = 0;
+
+    sum = 0;
+
+    while (i<n) {
+
+        printf("%d + ", a[i]);
+        sum = sum + a[i];
+        i++;
+    }
+    printf("\b\b= %d\n", sum);
+    return 0;
+}
+*/
+
 
 int main(void)
 {
-/*(1)
-//    char name[10];//4快樂ㄉ陣列，可以當指位器喔
-    char ch;//char有-128-127ㄉ八位元
-//    int x;//int有32位元
-    ch = 65;//單引號：字元，沒有單引號就是變數
-    printf("%c\n", ch);
-    ch = 'A';
-    printf("%d\n", ch);
-*/
-/*(2)
-    char name[10];
+    int i, j;
+    i = 1;
+    j = 1;
 
-    scanf("%s", name);
+    while (i<=9)
+    {
 
-    printf("%d\n%d\n%d\n%d\n%d\n%d\n",
-            name[0], name[1], name[2], name[3],
-            name[4], name[5] );//殼以印出字元ㄉ數字ㄋ!
-    printf("%s \n", name);
-*/
-/*(3)
-
-    char name[10] = {'A', 'B', '\0', 'C','D'};
-    //放ㄌ字元陣列卻沒有\0????
-    printf("%s\n", name[0], name[1], name[2], name[3],
-            name[4], name[5]);
-    //%s沒看到\0只好一直讀下去(GG
-*/
-/*(4)
-    char name[10];//大小 = 10
-    scanf("%9s", name);
-    //%9s可以限制name 剛好放九個字元
-    printf("%s\n", name);
-*/
-/*
-    double x;//64位元
-    float z;//32位元
-
-    scanf("%f", &z);
-    scanf("%lf", &x);//double 要加lf喔,才可以用夠大的空間來傳
-
-    printf("%f\n", z);
-    printf("%2.5f\n", x);
-    //居然可以不用管lㄋ!!!因為是印出來的表示法
-    //printf ㄉ會自動升級成ˊ64位元ㄉlf，棒棒
-    //把格式背起來!!!
-*/
-//玩一下sizeof()跟stringlenth
-    double x;
-    float z;
-    printf("%lu %lu", sizeof(x), sizeof(z));
-    //%lu = double ㄉ unsigned，size只會是兩倍大ㄉ正值
-
+        printf("%d : ", i);
+        j = 1;
+        while (j<=9)
+        {
+            printf("%2d ", i*j);
+            j = j + 1;
+        }
+        printf("\n");
+        i = i + 1;
+    }
 
     return 0;
 }
