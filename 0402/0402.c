@@ -1,6 +1,43 @@
 #include <stdio.h>
 //遞迴呼叫
+//最大公因數
+int gcd(int a, int b);
+int main(void)
+{
+	int x, y;
+	scanf("%d%d", &x, &y);
+	printf("gcd(%d, %d) = %d\n", x, y, gcd(x, y));
+     return 0;
+}
+//輾轉相除法
+int gcd(int a, int b)
+{
+	if (b==0)
+		return a;
+	else
+		return gcd(b, a%b);
+}
 
+/*
+//honoi!!!!河內塔喔喔
+//把三個碟子從一搬到三
+void honoi(int n, int from, int to, int buf)
+{
+    if(n>0){
+        honoi(n-1, from, buf, to);
+        printf("%d -> %d\n", from, to);
+        honoi(n-1, buf, to, from);
+    }
+
+
+}
+int main(void)
+{
+    honoi(3, 1, 3, 2);
+    return 0;
+}
+*/
+/*
 int paren(int n)
 {
 //((((1+2)*3+4)*5+6)*7+8)*9+10=4555
@@ -64,6 +101,7 @@ double power(double n, int p)//p>=0
 //        return 1;
 }
 */
+
 /*
 void f(int x)
 {
